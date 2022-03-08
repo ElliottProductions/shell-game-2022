@@ -58,15 +58,15 @@ function guessShell(shellId, correctShell){
 
 // set event listeners 
 button0.addEventListener('click', () => {
-    guessShell(0, getRandomShell());
+    guessShell('shell0', getRandomShell());
 });
 
 button1.addEventListener('click', () => {
-    guessShell(1, getRandomShell());
+    guessShell('shell1', getRandomShell());
 });
 
 button2.addEventListener('click', () => {
-    guessShell(2, getRandomShell());
+    guessShell('shell2', getRandomShell());
 });
 //hard reset
 aResetButton.addEventListener('click', () => {
