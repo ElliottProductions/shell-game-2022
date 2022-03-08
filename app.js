@@ -23,7 +23,7 @@ function getRandomShell() {
         'shell1',
         'shell2'
     ];
-    const index = Math.floor(Math.random() * 3);//hidingPlaces.length);
+    const index = Math.floor(Math.random() * hidingPlaces.length);
 
     const correctShell = `${hidingPlaces[index]}`;
     
@@ -31,12 +31,13 @@ function getRandomShell() {
     return correctShell;
 }
 
-function guessShell(shellId, correctShell){
-  //turn into its own function EVENTUALLY
+function resetStyles(){
     shellImg0.src = 'assets/shell.PNG';
     shellImg1.src = 'assets/shell.PNG';
     shellImg2.src = 'assets/shell.PNG';
-    ///end of own function
+}
+function guessShell(shellId, correctShell){
+    resetStyles();
 
     total++;
 
@@ -70,9 +71,8 @@ button2.addEventListener('click', () => {
 });
 //hard reset
 aResetButton.addEventListener('click', () => {
-    shellImg0.src = 'assets/shell.PNG';
-    shellImg1.src = 'assets/shell.PNG';
-    shellImg2.src = 'assets/shell.PNG';
+
+    resetStyles();
 
     wins = 0;
     total = 0;
