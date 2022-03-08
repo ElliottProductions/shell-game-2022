@@ -16,7 +16,7 @@ const totalEl = document.getElementById('total');
 
 let wins = 0;
 let total = 0;
-function getRandomShell() {
+function getRandomItem() {
 
     const hidingPlaces = [
         'shell0',
@@ -36,7 +36,7 @@ function resetStyles(){
     shellImg1.src = 'assets/shell.PNG';
     shellImg2.src = 'assets/shell.PNG';
 }
-function guessShell(shellId, correctShell){
+function handleGuess(shellId, correctShell){
     resetStyles();
 
     total++;
@@ -59,15 +59,15 @@ function guessShell(shellId, correctShell){
 
 // set event listeners 
 button0.addEventListener('click', () => {
-    guessShell('shell0', getRandomShell());
+    handleGuess('shell0', getRandomItem());
 });
 
 button1.addEventListener('click', () => {
-    guessShell('shell1', getRandomShell());
+    handleGuess('shell1', getRandomItem());
 });
 
 button2.addEventListener('click', () => {
-    guessShell('shell2', getRandomShell());
+    handleGuess('shell2', getRandomItem());
 });
 //hard reset
 aResetButton.addEventListener('click', () => {
