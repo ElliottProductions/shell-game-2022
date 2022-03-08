@@ -23,7 +23,7 @@ function getRandomShell() {
         'shell1',
         'shell2'
     ];
-    const index = Math.floor(Math.random() * hidingPlaces.length);
+    const index = Math.floor(Math.random() * 3);//hidingPlaces.length);
 
     const correctShell = `${hidingPlaces[index]}`;
     
@@ -32,7 +32,7 @@ function getRandomShell() {
 }
 
 function guessShell(shellId, correctShell){
-  //turn intoits own function EVENTUALLY
+  //turn into its own function EVENTUALLY
     shellImg0.src = 'assets/shell.PNG';
     shellImg1.src = 'assets/shell.PNG';
     shellImg2.src = 'assets/shell.PNG';
@@ -44,7 +44,7 @@ function guessShell(shellId, correctShell){
     if (correctShell === shellId){
         wins++;
     }
-
+    //change correct shell image
     const correctShellImg = document.getElementById(`${correctShell}`);
 
     correctShellImg.src = 'assets/shellcorrect.PNG';
@@ -58,15 +58,15 @@ function guessShell(shellId, correctShell){
 
 // set event listeners 
 button0.addEventListener('click', () => {
-    guessShell(0, getRandomShell);
+    guessShell(0, getRandomShell());
 });
 
 button1.addEventListener('click', () => {
-    guessShell(1);
+    guessShell(1, getRandomShell());
 });
 
 button2.addEventListener('click', () => {
-    guessShell(2);
+    guessShell(2, getRandomShell());
 });
 //hard reset
 aResetButton.addEventListener('click', () => {

@@ -33,7 +33,7 @@ body {
 
 main {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
   
@@ -88,4 +88,14 @@ footer {
     justify-content: flex-end;
     background-color: var(--color3);
     box-shadow: var(--shadow);
+}
+
+.options {
+    display: flex;
+    flex-direction: row;
+}
+
+.results {
+    display: flex;
+    flex-direction: row;
 }
