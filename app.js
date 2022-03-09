@@ -8,6 +8,8 @@ const button1 = document.getElementById('button1');
 const button2 = document.getElementById('button2');
 
 const aResetButton = document.getElementById('resetbutton');
+const tryAgainButton = document.getElementById('buttonplayagain');
+
 
 const winsEl = document.getElementById('wins');
 const lossesEl = document.getElementById('losses');
@@ -16,6 +18,9 @@ const totalEl = document.getElementById('total');
 
 let wins = 0;
 let total = 0;
+
+let playState = 0;
+
 function getRandomItem() {
 
     const hidingPlaces = [
@@ -59,15 +64,27 @@ function handleGuess(shellId, correctShell){
 
 // set event listeners 
 button0.addEventListener('click', () => {
-    handleGuess('shell0', getRandomItem());
+    if (playState === 0){
+        handleGuess('shell0', getRandomItem());
+        playState = 1;
+    }
+    
 });
 
 button1.addEventListener('click', () => {
-    handleGuess('shell1', getRandomItem());
+    if (playState === 0){
+        handleGuess('shell1', getRandomItem());
+        playState = 1;
+    } 
+    
 });
 
 button2.addEventListener('click', () => {
-    handleGuess('shell2', getRandomItem());
+    if (playState === 0){
+        handleGuess('shell2', getRandomItem());
+        playState = 1;
+    } 
+    
 });
 //hard reset
 aResetButton.addEventListener('click', () => {
@@ -76,11 +93,16 @@ aResetButton.addEventListener('click', () => {
 
     wins = 0;
     total = 0;
+    playState = 0;
 
     winsEl.textContent = wins;
     lossesEl.textContent = total - wins;
     totalEl.textContent = total;
   
+});
+tryAgainButton.addEventListener('click', () => {
+    playState = 0;
+    resetStyles();
 });
   // get user input
   // use user input to update state 
