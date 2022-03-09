@@ -41,6 +41,7 @@ function resetStyles(){
     shellImg1.src = 'assets/shell.PNG';
     shellImg2.src = 'assets/shell.PNG';
 }
+
 function handleGuess(shellId, correctShell){
     resetStyles();
 
