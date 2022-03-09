@@ -21,6 +21,8 @@ let total = 0;
 
 let playState = 0;
 
+tryAgainButton.style.visibility = 'hidden';
+
 function getRandomItem() {
 
     const hidingPlaces = [
@@ -62,13 +64,23 @@ function handleGuess(shellId, correctShell){
 
 }
 
+function hideButtons(){
+    button0.style.visibility = 'hidden';
+    button1.style.visibility = 'hidden';
+    button2.style.visibility = 'hidden';
+  
+}
+
 
 // set event listeners 
 button0.addEventListener('click', () => {
     if (playState === 0){
         handleGuess('shell0', getRandomItem());
         playState = 1;
+        hideButtons();
+        tryAgainButton.style.visibility = 'visible';
     }
+    
     
 });
 
@@ -76,7 +88,10 @@ button1.addEventListener('click', () => {
     if (playState === 0){
         handleGuess('shell1', getRandomItem());
         playState = 1;
+        hideButtons();
+        tryAgainButton.style.visibility = 'visible';
     } 
+    
     
 });
 
@@ -84,6 +99,8 @@ button2.addEventListener('click', () => {
     if (playState === 0){
         handleGuess('shell2', getRandomItem());
         playState = 1;
+        hideButtons();
+        tryAgainButton.style.visibility = 'visible';
     } 
     
 });
@@ -104,6 +121,11 @@ aResetButton.addEventListener('click', () => {
 tryAgainButton.addEventListener('click', () => {
     playState = 0;
     resetStyles();
+    button0.style.visibility = 'visible';
+    button1.style.visibility = 'visible';
+    button2.style.visibility = 'visible';
+    tryAgainButton.style.visibility = 'hidden';
+    
 });
   // get user input
   // use user input to update state 
