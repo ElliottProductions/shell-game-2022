@@ -53,17 +53,8 @@ section {
     border: solid 2px var(--color1);
 }
 
-header {
-    display: flex;
-    justify-content: flex-end;
-    background-color: var(--color3);
-    height: var(--header-height);
-    box-shadow: var(--shadow);
-}
-
-
 h2 {
-    font-size: 1.8rem;
+    font-size: 2rem;
     font-weight: bold;
 }
 
@@ -101,6 +92,7 @@ footer {
     justify-content: center;
     font-size:larger;
     font-weight: bold;
+ 
 }
 
 .shells {
@@ -120,5 +112,6 @@ footer {
 
 #buttonplayagain {
     min-height: 30px;
+    min-width: 100px;
 }
 
