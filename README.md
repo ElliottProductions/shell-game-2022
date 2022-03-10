@@ -15,7 +15,7 @@ If you work on more than one feature at a time, you are guaranteed to multiply y
 1) **Consider what features _depend_ on what other features. Use this dependency logic to figure out what order to complete tasks.**
 
 Additional considerations:
-- Ask: which of your HTML elements need to be hard coded, and which need to be dynamically generated?
+- Ask: which of your HTML elements need to be hard coded, and which need to be dynamically generated!?
 - Consider your data model. 
   - What kinds of objects (i.e., Dogs, Friends, Todos, etc) will you need? 
   - What are the key/value pairs? 
